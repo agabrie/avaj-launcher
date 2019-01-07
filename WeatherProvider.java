@@ -13,16 +13,17 @@ class WeatherProvider
 	public final int Stratosphere = 3;
 	public final int Troposphere = 4;
 	
-	private WeatherProvider weatherProvider;
+	private static WeatherProvider weatherProvider =  new WeatherProvider();
 	private String [] weather = {"RAIN", "SUN", "FROST", "WIND"};
 
-	public WeatherProvider()
+	private WeatherProvider()
 	{
 	}
-	public WeatherProvider getProvider()
+	public static WeatherProvider getProvider()
 	{
 		return (weatherProvider);
 	}
+
 	public String getCurrentWeather(Coordinates coords)
 	{
 		System.out.println(toString(coords));

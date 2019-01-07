@@ -9,13 +9,12 @@ class FirstClass
 		int frost = 0;
 		int wind = 0;
 		Coordinates coords;
-		WeatherProvider wp;
+		// WeatherProvider wp;
 		for(int i = 0; i < 10; i++)
 		{
 			coords = new Coordinates((int)(Math.random()*360-180), (int)(Math.random()*360-180), (int)(Math.random()*10000));
-			wp = new WeatherProvider();
-			System.out.printf("Coordinate : (longitude : %d,latitude : %d,height : %d)\nCurrent Weather :%5s\n\n",coords.getLongitude(),coords.getLatitude() , coords.getHeight(), wp.getCurrentWeather(coords));
-			switch(wp.getCurrentWeather(coords))
+			System.out.printf("Coordinate : (longitude : %d,latitude : %d,height : %d)\nCurrent Weather :%5s\n\n",coords.getLongitude(),coords.getLatitude() , coords.getHeight(), WeatherProvider.getProvider().getCurrentWeather(coords));
+			switch(WeatherProvider.getProvider().getCurrentWeather(coords))
 			{
 				case "RAIN":
 					rain++;
