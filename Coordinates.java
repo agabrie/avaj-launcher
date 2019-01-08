@@ -1,3 +1,6 @@
+
+/*************************** DONE? ***************************/
+
 class Coordinates
 {
 	private int longitude;
