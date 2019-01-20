@@ -5,10 +5,10 @@ class WeatherProvider
 {
 	/*
 		Exosphere: 700 to 10,000 km (440 to 6,200 miles)
-		Thermosphere: 80 to 700 km (50 to 440 miles)[11]
-		Mesosphere: 50 to 80 km (31 to 50 miles)
-		Stratosphere: 12 to 50 km (7 to 31 miles)
-		Troposphere: 0 to 12 km (0 to 7 miles)[12]
+		Thermosphere: 75 to 100 km
+		Mesosphere: 50 to 75 km
+		Stratosphere: 25 to 50 km
+		Troposphere: 0 to 25 km
 	*/
 	public final int Exosphere = 0;
 	public final int Thermosphere = 1;
@@ -17,7 +17,7 @@ class WeatherProvider
 	public final int Troposphere = 4;
 	
 	private static WeatherProvider weatherProvider =  new WeatherProvider();
-	private String [] weather = {"RAIN", "SUN", "FROST", "WIND"};
+	private String [] weather = {"RAIN", "SUN", "SNOW", "FOG"};
 
 	private WeatherProvider()
 	{
@@ -29,7 +29,6 @@ class WeatherProvider
 
 	public String getCurrentWeather(Coordinates coords)
 	{
-		System.out.println(toString(coords));
 		int index = 0;
 		if(getHemisphere(coords.getLongitude())){			// Northern
 			if(getMeridian(coords.getLatitude()))
@@ -56,14 +55,14 @@ class WeatherProvider
 	}
 	public boolean getHemisphere(int longitude)
 	{
-		if(longitude >= 0)
+		if(longitude % 2 == 0)
 			return(true);
 		else
 			return(false);
 	}
 	public boolean getMeridian(int latitude)
 	{
-		if(latitude >= 0)
+		if(latitude % 2 == 0)
 			return(true);
 		else
 			return(false);
@@ -72,13 +71,13 @@ class WeatherProvider
 	{
 		/*	returns which atmosphere the aircraft is currently in	*/
 
-		if		(height >= 700	&& height < 10000	)	// Exosphere
+		if		(height >= 75	&& height <= 100	)	// Exosphere
 			return (4);
-		else if	(height >= 80	&& height < 700		)	// Thermosphere
+		else if	(height >= 50	&& height < 75		)	// Thermosphere
 			return (3);
-		else if	(height >= 50	&& height < 80		)	// Mesosphere
+		else if	(height >= 25	&& height < 50		)	// Mesosphere
 			return (2);
-		else if	(height >= 12	&& height < 50		)	// Stratosphere
+		else if	(height >= 0	&& height < 25		)	// Stratosphere
 			return (1);
 		else											// Troposphere
 			return (0);
