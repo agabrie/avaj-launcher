@@ -37,39 +37,40 @@ class Simulator
 		System.out.printf("FOG : %d\n", fog);
 	}
 	public static int numCycles;
+	public static File simFile;
 	public static WeatherTower weatherTower = new WeatherTower();
 	private static void runSimulation(String [] args)
 	{
-		// File simFile = new File("simulation.txt");
+		simFile = new File("simulation.txt");
 		
 		AircraftFactory aircraftFactory = new AircraftFactory();
         
 		if (args.length < 1)
             return;
-		// String file = args[0];
+		String file = args[0];
         try {
             // FileInputStream fstream = new FileInputStream(filename);
-            BufferedReader breader = new BufferedReader(new InputStreamReader(new FileInputStream(args[0])));
-            String strLine;
-            int line = 1;
+            BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream(args[0])));
+            String line;
+            int lineNum = 1;
             String[] splitLine;
 
-            while ((strLine = breader.readLine()) != null)
+            while ((line = bReader.readLine()) != null)
             {
-                if (line == 1)
+                if (lineNum == 1)
 				{
                     try {
-                        numCycles = Integer.parseInt(strLine);
+                        numCycles = Integer.parseInt(line);
                         if (numCycles < 0)
                             return;
-                    } catch (NumberFormatException nfe) {
+                    } catch (NumberFormatException e) {
                         return;
                     }
 				}
                 else
                 {
                 	// format : TYPE NAME LONG LAT HEIGHT
-                    splitLine = strLine.split(" ");
+                    splitLine = line.split(" ");
                     // if (splitLine.length == 1 && splitLine[0].isEmpty())
                     //     continue;
                     // if (splitLine.length != 5)
@@ -89,9 +90,9 @@ class Simulator
                     }
                 }
                	// System.out.println(strLine);
-                line++;
+                lineNum++;
             }
-            breader.close();
+            bReader.close();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             return;
