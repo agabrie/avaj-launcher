@@ -1,3 +1,4 @@
 #!/bin/sh
-javac -d . *.java
+find . -name "*.java" > sources.txt
+javac @sources.txt
 # java -cp . com.avaj.simulator.Simulator $@

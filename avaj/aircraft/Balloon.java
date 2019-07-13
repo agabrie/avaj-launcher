@@ -1,4 +1,6 @@
-import java.util.*;
+package avaj.aircraft.balloon;
+
+import java.util.HashMap;
 class Balloon extends Aircraft implements Flyable
 {
 	private WeatherTower weatherTower;
@@ -26,18 +28,19 @@ class Balloon extends Aircraft implements Flyable
         	case "SNOW":
         	    this.coordinates = new Coordinates(coordinates.getLongitude() + 0,coordinates.getLatitude() + 0,coordinates.getHeight() - 15);
 		}
-		System.out.printf("%s# %s (%d): %s\n",this.getClass().getSimpleName(),this.name,this.id, weatherMap.get(weather));
+		output(this, weatherMap.get(weather));
 		if (this.coordinates.getHeight() <= 0)
         {
-            System.out.println(this.getClass().getSimpleName()+"#" + this.name + "(" + this.id + "): landing.");
+			unregisterOutput(this);
+		
             this.weatherTower.unregister(this);
-            System.out.println("Tower says: "+this.getClass().getSimpleName()+"#" + this.name + "(" + this.id + ")" + " unregistered from weather tower.");
-        }
+		}
 	}
 	public void registerTower(WeatherTower weatherTower)
     {
         this.weatherTower = weatherTower;
-        this.weatherTower.register(this);
-        System.out.printf("Tower says: %s# %s (%d) registered to weather tower.\n",this.getClass().getSimpleName(),this.name, this.id);
+		this.weatherTower.register(this);
+		registerOutput(this);
+		
     }
 }

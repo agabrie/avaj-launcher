@@ -1,4 +1,4 @@
-
+package avaj.sim.coordinates;
 /*************************** DONE? ***************************/
 
 class Coordinates

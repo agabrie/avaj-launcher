@@ -1,4 +1,7 @@
+package avaj.aircraft.aircraftfactory;
 /*************************** AGABRIE ***************************/
+import avaj.sim.coordinates;
+import avaj.aircraft.balloon;
 class AircraftFactory
 {
     // +    newAircraft(type : string, name : string, longitude : int, latitude : int, height : int) : Flyable

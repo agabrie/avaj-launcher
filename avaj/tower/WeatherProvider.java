@@ -1,6 +1,6 @@
-
+package avaj.tower.weatherprovider;
 /*************************** DONE? ***************************/
-
+import avaj.*;
 class WeatherProvider
 {
 	/*

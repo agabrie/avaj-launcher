@@ -1,0 +1,12 @@
+./avaj/tower/Tower.java
+./avaj/tower/WeatherTower.java
+./avaj/tower/WeatherProvider.java
+./avaj/aircraft/Helicopter.java
+./avaj/aircraft/JetPlane.java
+./avaj/aircraft/AircraftFactory.java
+./avaj/aircraft/Flyable.java
+./avaj/aircraft/Balloon.java
+./avaj/aircraft/Aircraft.java
+./avaj/sim/PrintyClass.java
+./avaj/sim/Simulator.java
+./avaj/sim/Coordinates.java

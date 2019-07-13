@@ -1,4 +1,4 @@
-
+package avaj.aircraft.flyable;
 /*************************** DONE? ***************************/
 
 interface Flyable

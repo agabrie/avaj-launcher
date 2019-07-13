@@ -1,3 +1,7 @@
+package avaj.tower.weathertower;
+
+import avaj.tower.tower;
+import avaj.sim.coordinates;
 class WeatherTower extends Tower
 {
 	public String getWeather(Coordinates coordinates)

@@ -36,13 +36,14 @@ class Simulator
 		System.out.printf("SNOW : %d\n", snow);
 		System.out.printf("FOG : %d\n", fog);
 	}
+
 	public static int numCycles;
-	public static File simFile;
+	// public static File simFile;
 	public static WeatherTower weatherTower = new WeatherTower();
 	private static void runSimulation(String [] args)
 	{
-		simFile = new File("simulation.txt");
-		
+		// simFile = new File("simulation.txt");
+		PrintyClass.setFile("simulation.txt");
 		AircraftFactory aircraftFactory = new AircraftFactory();
         
 		if (args.length < 1)
@@ -108,6 +109,7 @@ class Simulator
         {
             weatherTower.changeWeather();
             numCycles--;
-        }
+		}
+		PrintyClass.closePrintWriter();
 	}
 }
