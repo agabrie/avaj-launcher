@@ -3,9 +3,6 @@ package com.avaj.air;
 import com.avaj.misc.Coordinates;
 import com.avaj.misc.PrintyClass;
 
-
-/*************************** AGABRIE ***************************/
-
 public class Aircraft
 {
 	// #	id : long
@@ -32,9 +29,7 @@ public class Aircraft
 	public<A> void output(A aircraft,String weather){
 		PrintyClass.writeToFile(String.format("%s# %s (%d): %s\n",aircraft.getClass().getSimpleName(),name,id, weather));
 	}
-	// public<A> void output(String className, String name, long id, String weather){
-	// 	PrintyClass.writeToFile(String.format("%s# %s (%d): %s\n",className,name,id, weather));
-	// }
+
 	public <A> void unregisterOutput(A aircraft){
 		if (coordinates.getHeight() <= 0)
         {
@@ -48,13 +43,18 @@ public class Aircraft
 		PrintyClass.writeToFile(String.format("Tower says: %s# %s (%d) registered to weather tower.\n",aircraft.getClass().getSimpleName(),name, id));
 		// System.out.printf("Tower says: %s# %s (%d) registered to weather tower.\n",this.getClass().getSimpleName(),this.name, this.id);
 	}
-	// public String getName(){
-	// 	return name;
-	// }
-	// public long getID(){
-	// 	return id;
-	// }
 } 
+
+
+
+
+
+
+
+
+
+
+
 
 
 

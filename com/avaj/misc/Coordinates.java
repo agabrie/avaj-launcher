@@ -1,5 +1,4 @@
 package com.avaj.misc;
-/*************************** DONE? ***************************/
 
 public class Coordinates
 {
@@ -27,6 +26,7 @@ public class Coordinates
 		return (height);
 	}
 }
+
 
 
 

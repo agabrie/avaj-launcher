@@ -12,6 +12,7 @@ import java.io.*;
 public class Simulator
 {
 	public static int numCycles;
+	public static int lineNum;
 	public static WeatherTower weatherTower = new WeatherTower();
 
 	private static void runSimulation(String [] args)
@@ -25,7 +26,7 @@ public class Simulator
 			BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 			
             String line;
-            int lineNum = 1;
+            lineNum = 1;
             String[] splitLine;
 
             while ((line = bReader.readLine()) != null)
@@ -35,9 +36,9 @@ public class Simulator
                     try {
                         numCycles = Integer.parseInt(line);
                         if (numCycles < 0)
-                            return;
+							throw (new Exception("Error: Number of cycles must be greater than 0, not '"+line+"'"));
                     } catch (NumberFormatException e) {
-                        return;
+                        throw (new Exception("Error: Number of cycles must be a value, not '"+line+"'"));
                     }
 				}
                 else
@@ -47,18 +48,21 @@ public class Simulator
                     if (splitLine.length == 1 && splitLine[0].isEmpty())
                         continue;
                     if (splitLine.length != 5)
-                        throw (new Exception("Error: line " + line + ": there must be 5 parameters."));
-					int longitude = Integer.parseInt(splitLine[2]) % 360;
-					int latitude = Integer.parseInt(splitLine[3]) % 360;
-					int height = Integer.parseInt(splitLine[4]);			
-                    try {
+						throw (new Exception("there must be 5 parameters"));
+					int longitude,latitude, height;
+					try{
+					longitude = Integer.parseInt(splitLine[2]) % 360;
+					latitude = Integer.parseInt(splitLine[3]) % 360;
+					height = Integer.parseInt(splitLine[4]);			
+					}catch (NumberFormatException nfe) {
+                        throw new Exception("parameters 3 to 5 must be integers");
+                        // return;
+                    } 
+					try {
                         aircraftFactory.newAircraft(splitLine[0],splitLine[1],longitude,latitude,height).registerTower(weatherTower);
-                    } catch (NumberFormatException nfe) {
-                        System.out.println("Error: line " + line + ": parameters 3 to 5 must be integers.");
-                        return;
                     } catch (Exception ex) {
-                        System.out.println("Error: " + ex.getMessage());
-                        return;
+                        throw new Exception("Incorrect Aircraft Type ["+splitLine[0]+"] found");
+                        // return;
                     }
                 }
                	// System.out.println(strLine);
@@ -67,7 +71,7 @@ public class Simulator
             bReader.close();
         } catch (Exception e) {
 			// bReader.close();
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage()+" on line number : "+lineNum);
 
 			return;
 		}

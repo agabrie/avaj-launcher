@@ -34,13 +34,13 @@ public class JetPlane extends Aircraft implements Flyable
         	case "SNOW":
         	    this.coordinates = new Coordinates(coordinates.getLongitude() + 0,coordinates.getLatitude() + 0,coordinates.getHeight() - 7);
 		}
-		output(this, weatherMap.get(weather));
 		if (this.coordinates.getHeight() <= 0)
         {
 			unregisterOutput(this);
-		
             this.weatherTower.unregister(this);
 		}
+		else
+			output(this, weatherMap.get(weather));
 	}
 	public void registerTower(WeatherTower weatherTower)
     {
