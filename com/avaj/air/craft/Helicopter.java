@@ -1,6 +1,13 @@
-package avaj.aircraft.helicopter;
+package com.avaj.air.craft;
+
+import com.avaj.air.*;
+import com.avaj.misc.Coordinates;
+import com.avaj.tower.WeatherTower;
+
 import java.util.HashMap;
-class Helicopter extends Aircraft implements Flyable
+
+@SuppressWarnings("serial")
+public class Helicopter extends Aircraft implements Flyable
 {
 	private WeatherTower weatherTower;
 	public Helicopter(String name, Coordinates coordinates)
@@ -43,3 +50,43 @@ class Helicopter extends Aircraft implements Flyable
 		
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

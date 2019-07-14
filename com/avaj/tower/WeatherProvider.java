@@ -1,7 +1,8 @@
-package avaj.tower.weatherprovider;
-/*************************** DONE? ***************************/
-import avaj.*;
-class WeatherProvider
+package com.avaj.tower;
+
+import com.avaj.misc.Coordinates;
+
+public class WeatherProvider
 {
 	/*
 		Exosphere: 700 to 10,000 km (440 to 6,200 miles)
@@ -30,17 +31,17 @@ class WeatherProvider
 	public String getCurrentWeather(Coordinates coords)
 	{
 		int index = 0;
-		if(getHemisphere(coords.getLongitude())){			// Northern
+		if(getHemisphere(coords.getLongitude())){				// Northern
 			if(getMeridian(coords.getLatitude()))
-				index = 0;											//	Eastern
+				index = 0;										//	//	Eastern
 			else
-				index = 1;											//	Western
+				index = 1;										//	//	Western
 		}
-		else{												// Southern
+		else{													// Southern
 			if(getMeridian(coords.getLatitude()))
-				index = 2;											//	Eatern
+				index = 2;										//	//	Eatern
 			else
-				index = 3;											//	Western
+				index = 3;										//	//	Western
 		}
 		return(cycleWeather(coords.getHeight(),index));
 	}
@@ -88,6 +89,7 @@ class WeatherProvider
 		String lon = (getHemisphere(coords.getLongitude()) ? "Northern Hemisphere" : "Southern Hemisphere");
 		String lat = (getMeridian(coords.getLatitude()) ? "Eastern Hemisphere" : "Western Hemisphere");
 		String y;
+/**************************************** AGABRIE ****************************************/
 		switch(getAtmosphere(coords.getHeight()))
 		{	
 			case 1:

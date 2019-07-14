@@ -1,8 +1,8 @@
-package avaj.tower.weathertower;
-
-import avaj.tower.tower;
-import avaj.sim.coordinates;
-class WeatherTower extends Tower
+// package com.avaj.avaj.tower.weathertower;
+package com.avaj.tower;
+import com.avaj.tower.Tower;
+import com.avaj.misc.Coordinates;
+public class WeatherTower extends Tower
 {
 	public String getWeather(Coordinates coordinates)
 	{
@@ -18,3 +18,75 @@ class WeatherTower extends Tower
 		this.conditionsChanged();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

@@ -1,6 +1,6 @@
 #!/bin/sh
-java com.avaj.sim.Simulator scenario.txt
-cat -e simulation.txt
+find . -name "*.java" > sources.txt
+javac @sources.txt
 
 
 

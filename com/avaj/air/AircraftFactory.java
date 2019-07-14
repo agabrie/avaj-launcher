@@ -1,8 +1,12 @@
-package avaj.aircraft.aircraftfactory;
+package com.avaj.air;
+
+import com.avaj.air.Flyable;
+import com.avaj.air.craft.*;
+import com.avaj.misc.Coordinates;
+
 /*************************** AGABRIE ***************************/
-import avaj.sim.coordinates;
-import avaj.aircraft.balloon;
-class AircraftFactory
+
+public class AircraftFactory
 {
     // +    newAircraft(type : string, name : string, longitude : int, latitude : int, height : int) : Flyable
     public Flyable newAircraft(String type, String name, int longitude, int latitude, int height)
@@ -22,3 +26,67 @@ class AircraftFactory
         // return();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

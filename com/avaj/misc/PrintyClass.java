@@ -1,30 +1,9 @@
-package avaj.sim.printyclass;
+package com.avaj.misc;
 import java.io.FileWriter;
 import java.io.File;
-class PrintyClass{
+public class PrintyClass{
 	public static File file;
 	public static FileWriter pw;
-	// public PrintyClass(){
-	// 	setFile("simulation.txt");
-	// }
-	// public PrintyClass(String fileName){
-	// 	setFile(fileName);
-	// 	try {
-			
-	// 		pw = new PrintWriter(new FileWriter(file));
-	// 	} catch (Exception e) {
-	// 		//TODO: handle exception
-	// 	}
-	// }
-	// public PrintyClass(File file){
-	// 	setFile(file);
-	// 	try {
-			
-	// 		pw = new PrintWriter(new FileWriter(file));
-	// 	} catch (Exception e) {
-	// 		//TODO: handle exception
-	// 	}
-	// }
 	public static File getFile(){
 		return (file);
 	}
@@ -34,7 +13,6 @@ class PrintyClass{
 			try {
 				pw = /*new PrintWriter(*/new FileWriter(file)/*)*/;
 			} catch (Exception e) {
-					//TODO: handle exception
 					System.out.println(e);
 			}
 		}catch(Exception e){
@@ -47,7 +25,6 @@ class PrintyClass{
 			try {
 				pw = /*new PrintWriter(*/new FileWriter(file)/*)*/;
 			} catch (Exception e) {
-					//TODO: handle exception
 					System.out.println(e);
 			}
 		}catch(Exception e){
@@ -60,8 +37,6 @@ class PrintyClass{
 			pw.write(s);
 		} catch (Exception e) {
 			System.out.println(e);
-
-			//TODO: handle exception
 		}
 	}
 	public static void closePrintWriter(){
@@ -70,10 +45,48 @@ class PrintyClass{
 				
 				pw.close();
 			} catch (Exception e) {
-			System.out.println(e);
-				
-				//TODO: handle exception
+				System.out.println(e);
 			}
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

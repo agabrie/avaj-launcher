@@ -1,8 +1,8 @@
 #!/bin/sh
-java com.avaj.sim.Simulator scenario.txt
-cat -e simulation.txt
-
-
+find . -name "*.class" -delete
+rm -rf simulation.txt
+rm -rf sources.txt
+rm -rf .vscode
 
 
 

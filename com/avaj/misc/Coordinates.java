@@ -1,7 +1,7 @@
-package avaj.sim.coordinates;
+package com.avaj.misc;
 /*************************** DONE? ***************************/
 
-class Coordinates
+public class Coordinates
 {
 	private int longitude;
 	private int latitude;
@@ -27,3 +27,66 @@ class Coordinates
 		return (height);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

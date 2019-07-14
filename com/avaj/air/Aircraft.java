@@ -1,9 +1,12 @@
-package avaj.aircraft.aircraft;
+package com.avaj.air;
+
+import com.avaj.misc.Coordinates;
+import com.avaj.misc.PrintyClass;
+
+
 /*************************** AGABRIE ***************************/
-import avaj.tower.tower;
-import avaj.sim.coordinates;
-import avaj.sim.printyclass;
-class Aircraft
+
+public class Aircraft
 {
 	// #	id : long
 	protected long			id;
@@ -52,3 +55,38 @@ class Aircraft
 	// 	return id;
 	// }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

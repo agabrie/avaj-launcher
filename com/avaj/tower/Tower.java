@@ -1,11 +1,12 @@
 
-package avaj.tower.tower;
+// package com.avaj.avaj.tower.tower;
+package com.avaj.tower;
+import com.avaj.air.Flyable;
 /*************************** DONE? ***************************/
-import avaj.aircraft.flyable;
 import java.util.List;
 import java.util.ArrayList;
 
-class Tower
+public class Tower
 {
 	// -	observers : Flyable*
 	private List<Flyable> observers = new ArrayList<Flyable>();
@@ -33,3 +34,59 @@ class Tower
 		observers.removeAll(landed);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/

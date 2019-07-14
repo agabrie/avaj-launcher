@@ -1,6 +1,13 @@
-package avaj.aircraft.jetplane;
+package com.avaj.air.craft;
+
+import com.avaj.air.*;
+import com.avaj.misc.Coordinates;
+import com.avaj.tower.WeatherTower;
+
 import java.util.HashMap;
-class JetPlane extends Aircraft implements Flyable
+
+@SuppressWarnings("serial")
+public class JetPlane extends Aircraft implements Flyable
 {
 	private WeatherTower weatherTower;
 	public JetPlane(String name, Coordinates coordinates)
@@ -43,3 +50,43 @@ class JetPlane extends Aircraft implements Flyable
 		
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************** AGABRIE ****************************************/
